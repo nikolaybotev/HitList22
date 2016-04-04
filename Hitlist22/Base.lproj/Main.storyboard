@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xpd-26-t3M">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="sJR-E3-88G"/>
@@ -29,7 +29,7 @@
                         <constraints>
                             <constraint firstItem="xpd-26-t3M" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="CdM-IJ-wa9"/>
                             <constraint firstItem="xpd-26-t3M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CkE-Nh-ZTO"/>
-                            <constraint firstItem="xpd-26-t3M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hx9-FM-lS1"/>
+                            <constraint firstItem="xpd-26-t3M" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="hES-bj-d60"/>
                             <constraint firstItem="xpd-26-t3M" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="mEn-KL-3Uk"/>
                         </constraints>
                     </view>
