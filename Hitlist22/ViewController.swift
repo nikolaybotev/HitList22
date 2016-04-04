@@ -11,18 +11,18 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource {
 
-    var people = [NSManagedObject]()
+    var people = [Person]()
 
     @IBOutlet var tableView: UITableView!
+
+    var managedContext: NSManagedObjectContext {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.managedObjectContext
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-
-        // 1
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
-        let managedContext = appDelegate.managedObjectContext
 
         // 2
         let fetchRequest = NSFetchRequest(entityName: "Person")
@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
 
-            people = results as! [NSManagedObject]
+            people = results as! [Person]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -62,18 +62,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func addPerson(name: String) {
-        // 1
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
-        let managedContext = appDelegate.managedObjectContext
-
-        // 2
-        let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext)
-
         // 3
-        let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        let person = Person.createIn(managedContext)
 
-        person.setValue(name, forKey: "name")
+        person.name = name
 
         // 4
         do {
@@ -94,7 +86,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
 
-        cell!.textLabel!.text = people[indexPath.row].valueForKey("name") as? String
+        cell!.textLabel!.text = people[indexPath.row].name
 
         return cell!
     }
