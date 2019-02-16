@@ -8,6 +8,7 @@
 
 import CoreData
 
+@objc(Person)
 class Person: NSManagedObject {
     class func createIn(_ managedContext: NSManagedObjectContext) -> Person {
         let entity = NSEntityDescription.entity(forEntityName: "Person", in: managedContext)
