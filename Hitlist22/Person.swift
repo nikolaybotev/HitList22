@@ -8,12 +8,11 @@
 
 import CoreData
 
-@objc(Person)
 class Person: NSManagedObject {
-    class func createIn(managedContext: NSManagedObjectContext) -> Person {
-        let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext)
+    class func createIn(_ managedContext: NSManagedObjectContext) -> Person {
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: managedContext)
 
-        return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Person
+        return NSManagedObject(entity: entity!, insertInto: managedContext) as! Person
     }
 
     @NSManaged var name: String?

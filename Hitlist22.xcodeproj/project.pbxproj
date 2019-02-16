@@ -10,7 +10,6 @@
 		F65BCC1E1CB311D50042423A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BCC1D1CB311D50042423A /* AppDelegate.swift */; };
 		F65BCC201CB311D50042423A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BCC1F1CB311D50042423A /* ViewController.swift */; };
 		F65BCC231CB311D50042423A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65BCC211CB311D50042423A /* Main.storyboard */; };
-		F65BCC261CB311D50042423A /* Hitlist22.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65BCC241CB311D50042423A /* Hitlist22.xcdatamodeld */; };
 		F65BCC281CB311D50042423A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F65BCC271CB311D50042423A /* Assets.xcassets */; };
 		F65BCC2B1CB311D50042423A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65BCC291CB311D50042423A /* LaunchScreen.storyboard */; };
 		F65BCC331CB327070042423A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BCC321CB327070042423A /* Person.swift */; };
@@ -21,7 +20,6 @@
 		F65BCC1D1CB311D50042423A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F65BCC1F1CB311D50042423A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F65BCC221CB311D50042423A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F65BCC251CB311D50042423A /* Hitlist22.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hitlist22.xcdatamodel; sourceTree = "<group>"; };
 		F65BCC271CB311D50042423A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F65BCC2A1CB311D50042423A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F65BCC2C1CB311D50042423A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				F65BCC271CB311D50042423A /* Assets.xcassets */,
 				F65BCC291CB311D50042423A /* LaunchScreen.storyboard */,
 				F65BCC2C1CB311D50042423A /* Info.plist */,
-				F65BCC241CB311D50042423A /* Hitlist22.xcdatamodeld */,
 			);
 			path = Hitlist22;
 			sourceTree = "<group>";
@@ -97,12 +94,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Ubimoji;
 				TargetAttributes = {
 					F65BCC191CB311D50042423A = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 99LSER4J28;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -143,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65BCC201CB311D50042423A /* ViewController.swift in Sources */,
-				F65BCC261CB311D50042423A /* Hitlist22.xcdatamodeld in Sources */,
 				F65BCC331CB327070042423A /* Person.swift in Sources */,
 				F65BCC1E1CB311D50042423A /* AppDelegate.swift in Sources */,
 			);
@@ -180,13 +177,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -226,13 +233,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -251,6 +268,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -264,6 +282,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ubimoji.Hitlist22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -275,6 +295,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ubimoji.Hitlist22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -297,6 +319,7 @@
 				F65BCC311CB311D50042423A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

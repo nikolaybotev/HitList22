@@ -16,52 +16,50 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
 
     var managedContext: NSManagedObjectContext {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.managedObjectContext
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         // 2
-        let fetchRequest = NSFetchRequest(entityName: "Person")
+        let fetchRequest = NSFetchRequest<Person>(entityName: "Person")
 
         // 3
         do {
-            let results = try managedContext.executeFetchRequest(fetchRequest)
-
-            people = results as! [Person]
+            people = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
     }
 
-    @IBAction func addName(sender: AnyObject) {
+    @IBAction func addName(_ sender: AnyObject) {
         let alert = UIAlertController(title: "New Name",
                                       message: "Addd a new name",
-                                      preferredStyle: .Alert)
+                                      preferredStyle: .alert)
 
-        let saveAction = UIAlertAction(title: "Save", style: .Default) { action in
+        let saveAction = UIAlertAction(title: "Save", style: .default) { action in
 
             let textField = alert.textFields!.first
             self.addPerson(textField!.text!)
             self.tableView.reloadData()
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel)  { action in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)  { action in
         }
 
-        alert.addTextFieldWithConfigurationHandler { textField in
+        alert.addTextField { textField in
         }
 
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
 
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
-    func addPerson(name: String) {
+    func addPerson(_ name: String) {
         // 3
         let person = Person.createIn(managedContext)
 
@@ -79,14 +77,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return people.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
 
-        cell!.textLabel!.text = people[indexPath.row].name
+        cell!.textLabel!.text = people[(indexPath as NSIndexPath).row].name
 
         return cell!
     }
